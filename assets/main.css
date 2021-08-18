@@ -1,0 +1,12 @@
+:root {
+    --mobile-body-bg-color: #fff;
+    --desktop-body-bg-color: #efefef; 
+}
+body{
+    background-color:var(--mobile-body-bg-color); 
+}
+@media only screen and (min-width: 960px) {
+    body {
+        background-color: var(--desktop-body-bg-color);
+    }
+}
