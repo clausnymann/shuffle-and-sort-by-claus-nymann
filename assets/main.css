@@ -1,12 +1,119 @@
 :root {
-    --mobile-body-bg-color: #fff;
-    --desktop-body-bg-color: #efefef; 
+  --mobile-body-bg-color: #fff;
+  --desktop-body-bg-color: #efefef;
 }
-body{
-    background-color:var(--mobile-body-bg-color); 
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+body {
+  background-color: var(--mobile-body-bg-color);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+}
+button {
+  border: none;
+  padding: 15px 5px;
+  font-size: 12px;
+  border-radius: 5px;
+  color: #fff;
+  text-transform: uppercase;
+  box-shadow: 0 2px 0 0 #416075;
+}
+.sas-wrp {
+  border: 10px solid #000;
+}
+.sas-headline {
+  background-color: #333333;
+  padding: 5px 0 10px 0;
+  color: #fff;
+  text-align: center;
+}
+.sas-menu {
+  margin: 10px 20%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(20px, 1fr));
+  grid-gap: 5px;
+}
+.sas-main {
+  margin: 10px 20px;
+}
+.sas-squares .square {
+  height: calc((100vh - 180px) / 9);
+  background-color: #efefef;
+  display: grid;
+  grid-template-columns: 10px calc(100% - 10px);
+  grid-gap: 0;
+  margin-bottom: 2px;
+  align-items: center;
+}
+.sas-squares .square .square-color {
+  width: 10px;
+  height: 100%;
+}
+.sas-squares .square .square-nr {
+  text-align: center;
+  font-weight: bold;
+}
+.sas-credits {
+  margin: 10px;
+  font-size: 12px;
+  text-align: center;
 }
 @media only screen and (min-width: 960px) {
-    body {
-        background-color: var(--desktop-body-bg-color);
-    }
+  body {
+    background-color: var(--desktop-body-bg-color);
+  }
+  .sas-wrp {
+    border: none;
+  }
+  .sas-headline {
+    background-color: #fff;
+    color: inherit;
+    border-bottom: 3px solid #ccc;
+  }
+  .sas-main {
+    margin: 0;
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+    grid-template-areas: " a b ";
+  }
+  .sas-menu {
+    grid-area: b;
+    margin: 20px;
+    display: block;
+  }
+  .sas-menu .button {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  .sas-squares {
+    grid-area: a;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: repeat(3, 29vh);
+    grid-gap: 0;
+  }
+  .sas-squares .square {
+    height: 100%;
+    width: 100%;
+    display: block;
+    position: relative;
+    margin: 0;
+  }
+  .sas-squares .square .square-color {
+    width: 100%;
+  }
+  .sas-squares .square .square-nr {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    line-height: 1;
+    color: #fff;
+    font-size: 100px;
+    margin-top: -43px;
+  }
 }
